@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>asciinema2gif</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/kube/6.0.1/css/kube.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <div class="row centered">
+      <div class="col-6">
+        <h1 class="upper">asciinema2gif</h1>
+        <div>
+          <a href="https://github.com/seanc/asciinema2gif.host" class="button small">Source</a>
+          <a href="https://github.com/seanc" class="button small">Author</a>
+        </div>
+        <br>
+        <div>
+          <p>
+            Asciinema2gif (asciinema to gif) is a simple website that allows
+            you to convert your asciinema casts into gifs for use in documentation,
+            demonstrations and various other areas. It acts as a CDN so you can just
+            use the URL wherever you'd like.
+          </p>
+        </div>
+        <hr>
+        <div>
+          <h3 class="upper muted">Documentation</h3>
+          <div>
+            <p>
+              Asciinema2gif is very simple to use, for basic usage the URL is structured like so:
+              <code>
+                https://asciinema2gif.host/gif/id
+              </code>
+            </p>
+            <p>
+              This will generate a gif from default parameters.
+              If you would like to change the size, theme, speed, etc you should
+              pass them as query parameters
+            </p>
+            <table class="bordered striped">
+              <thead>
+                <th>Parameter</th>
+                <th>Description</th>
+                <th>Value</th>
+                <th>Default</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>size</td>
+                  <td>how large should the gif be</td>
+                  <td>
+                    small, medium, big
+                  </td>
+                  <td>medium</td>
+                </tr>
+                <tr>
+                  <td>speed</td>
+                  <td>how fast should the gif go</td>
+                  <td>between numbers 1 and 7</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>theme</td>
+                  <td>what theme should it used</td>
+                  <td>asciinema, tango, solarized-dark, solarized-light, monokai</td>
+                  <td>asciinema</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              An example of using query parameters:
+              <code>
+                https://asciinema2gif.host/gif/7kf65u2eaq0q7pbkemgf5mpi0?theme=monokai
+              </code>
+            </p>
+            <p>will yield:</p>
+
+            <img src="https://asciinema2gif.host/gif/7kf65u2eaq0q7pbkemgf5mpi0?theme=monokai" alt="">
+          </div>
+        </div>
+        <br>
+        <div>
+          <h3 class="upper muted">Caveats</h3>
+          <div>
+            <h4>Conversion Time</h4>
+            <p>
+              Unfortunately you may experience slow conversion times,
+              asciinema2gif uses the asciinema2gif cli app in the background
+              and is relatively intensive so conversions are ran throuhh a queue.
+            </p>
+            <br>
+            <h4>Varying Sizes</h4>
+            <p>
+              Although you may think the sizes are universal throughount, the way
+              asciinema records and crops is based on the window size at recording time.
+              This is not the same for everyone and therefore the sizes are relative to the
+              actual asciicast size.
+            </p>
+          </div>
+        </div>
+        <br>
+        <div>
+          <h3 class="upper muted">Credits</h3>
+          <div>
+            <p>
+              Special credits to the creators of the <a href="https://github.com/tav/asciinema2gif">asciinema2gif cli</a>.
+              This would not be possible without them. Also special thanks to
+              <a href="https://kbve.com">KBVE</a> for providing the hosting for
+              this service.
+            </p>
+          </div>
+        </div>
+        <br>
+        <div>
+          <h3 class="upper muted">Troubleshooting</h3>
+          <div>
+            <p>
+              If you run into any issues, please send me an email at <a href="mailto:hello@imsean.me">hello@imsean.me</a>
+              or create an issue on the GitHub repository. Please note however that
+              some gifs may take longer to generate based on the length of the asciicast.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="row centered">
+        <div class="col-6">
+          <hr>
+          <div class="float-left">
+            <p class="muted">Created by <a href="https://imsean.me">Sean Wilson</a></p>
+          </div>
+          <div class="float-right">
+            <p><a href="https://www.paypal.me/programmatical/5">Donate</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
